@@ -1,0 +1,41 @@
+{
+  "data_sha256": "5306eeced6c41bef002c7bc717df6e0a4b18c1ce37798ec79edecaec6e8e7501",
+  "data_sha256_raw": "d3a2a5bc7cf24f80e6d26e0c4266477bf17796b6b4581205cb76a07ffa4a82c1",
+  "data_checksum_mode": "UTF-8 normalized to LF",
+  "shots": 2000000,
+  "bits": 8000000,
+  "ler": 0.03364375,
+  "ci95": [
+    0.03345966132667166,
+    0.03382783867332834
+  ],
+  "basis": {
+    "X": {
+      "shots": 1000000,
+      "wrong": 136190,
+      "sum_loss": 34047.5,
+      "sum_squared_loss": 18836.75,
+      "seconds": 246.9015936999931
+    },
+    "Z": {
+      "shots": 1000000,
+      "wrong": 132960,
+      "sum_loss": 33240.0,
+      "sum_squared_loss": 18713.0,
+      "seconds": 293.05302620000293
+    }
+  },
+  "note": "Shot-level interval; frozen physics decoder, no fitted weights.",
+  "generation": {
+    "out": "data\\mld_audit_release_1086100",
+    "shots": 1000000,
+    "seed": 1086100,
+    "rounds": 5,
+    "noise_probability": 0.002,
+    "basis": [
+      "X",
+      "Z"
+    ],
+    "exclude_observable_flips": false
+  }
+}

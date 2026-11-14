@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Kaggle upload package, rebuilt by data/make_kaggle_package.py (host_only/ holds the hidden labels)
+data/kaggle_competition/
+
+# Lookup tables (~113 MB), rebuilt by submission_template/build_lut.py
+submission_template/lut/
+
+# Cached near-exact reference decodes, rebuilt by submission_template/compare_settings.py
+.cache/

@@ -1,0 +1,200 @@
+{
+  "model_id": "physical_pair_closure_release_v1",
+  "description": "Pretrained easy-syndrome table plus BP/OSD candidate union and one per-class physical-pair closure pass.",
+  "assets_sha256": "86334ef1a439b7690a5ab0d9c4663a778d6d6c8f19b09f75a0c1648af46ed10b",
+  "lut_max_fired": 4,
+  "parameters": {
+    "schedules": [
+      [
+        3,
+        0.8,
+        0.5
+      ],
+      [
+        5,
+        0.8,
+        0.5
+      ],
+      [
+        8,
+        0.8,
+        0.5
+      ]
+    ],
+    "lam": 600,
+    "lam2": 200,
+    "capacity": 2048,
+    "gap": 20.0,
+    "closure_seeds": 2
+  },
+  "closure_policy": "One pass, selecting at most two cheapest explanations per represented logical class; original priors score every distinct vector once.",
+  "lookup_training": {
+    "shots_per_basis": 10000000,
+    "chunk": 2000000,
+    "seeds": {
+      "X": 20261113,
+      "Z": 20261114
+    },
+    "selection": "Retained: 50M challenger did not demonstrate a paired development improvement.",
+    "generator": "prepare.py train --shots 10000000 --chunk 2000000 --seed 20261113",
+    "training_and_asset_builder_ast_sha256": "bed4613f9244726efc9aa21e8b4b39e63dfbdde2e9c2d05811fdcd3f785f4040",
+    "reproduction_verified": {
+      "all_head_keys_and_labels_match": true,
+      "rebuilt_assets_byte_identical": true,
+      "patterns": {
+        "X": 102447,
+        "Z": 101087
+      }
+    }
+  },
+  "provenance": {
+    "research_branch_commit": "d4900e2",
+    "main_base_commit": "309e72d",
+    "neural_weights": false,
+    "test_data_used_for_training": false
+  },
+  "historical_validation": {
+    "reference_model": "Original imported BP/OSD, not main's current MLD decoder.",
+    "independent_shots": 300000,
+    "seeds": [
+      830100,
+      830101,
+      830102,
+      830103,
+      830104,
+      830105
+    ],
+    "ler": 0.034145833333333334,
+    "reference_ler": 0.035063333333333335,
+    "paired_delta_95ci": [
+      -0.0010738152737016738,
+      -0.0007611847262983262
+    ],
+    "correctness_tests": 19
+  },
+  "release_validation": {
+    "shots": 2000000,
+    "logical_bits": 8000000,
+    "ler": 0.03431875,
+    "ler_95ci": [
+      0.03413208681930797,
+      0.034505413180692036
+    ],
+    "interval_unit": "Per-shot mean bit error, stratified by independent basis/seed streams.",
+    "shots_per_basis": 1000000,
+    "per_basis_ler": {
+      "X": 0.0348675,
+      "Z": 0.03377
+    },
+    "status": "completed_no_retuning",
+    "stim_version": "1.16.0",
+    "numpy_version": "2.2.6",
+    "numba_version": "0.68.1",
+    "assets_sha256": "86334ef1a439b7690a5ab0d9c4663a778d6d6c8f19b09f75a0c1648af46ed10b",
+    "seeds": [
+      940100,
+      940102,
+      940104,
+      940106,
+      940101,
+      940103,
+      940105,
+      940107
+    ],
+    "shots_per_seed": 250000,
+    "hyperparameters_retuned_after_audit": false,
+    "note": "Absolute accuracy estimate on new samples; not a new training set or a comparison against main's MLD decoder."
+  },
+  "development_selection": {
+    "shots": 300000,
+    "logical_bits": 1200000,
+    "original_model_ler": 0.03444666666666667,
+    "challenger_ler": 0.03444083333333333,
+    "challenger_ler_95ci": [
+      0.033957240055276935,
+      0.034924426611389725
+    ],
+    "challenger_minus_original": -5.833333333333333e-06,
+    "paired_delta_95ci": [
+      -6.39715225611726e-05,
+      5.230485589450593e-05
+    ],
+    "challenger_per_basis_ler": {
+      "X": 0.03536333333333333,
+      "Z": 0.03351833333333333
+    },
+    "selected_shots_per_basis": 10000000,
+    "original_head_wrong_bits": 1776,
+    "original_search_wrong_bits": 39560,
+    "selection_rule": "50M must improve paired development LER with 95% CI below zero; otherwise retain frozen 10M."
+  },
+  "additional_training": {
+    "challenger_shots_per_basis": 50000000,
+    "seeds": [
+      961001,
+      961002
+    ],
+    "selected": false,
+    "trained_samples_committed": false
+  },
+  "release_checks": {
+    "packaging_equivalence_shots": 300000,
+    "packaging_changed_bits": 0,
+    "release_unit_tests": 12,
+    "fresh_environment_and_renamed_folder": true,
+    "normal_import_with_existing_main_bposd": true,
+    "existing_run_local_interface_verified": true,
+    "train_reference_ler": 0.03443,
+    "main_decoder_original_git_blob": "3a6809b10fc8870d554e95aa03faa80d651e7d8f"
+  },
+  "runtime": {
+    "cpu_parallel": true,
+    "target_judge_threads": 48,
+    "gpu_used": false,
+    "judge_hardware_measured": false,
+    "first_import": "Loads assets, builds pair index and warms Numba; no training required.",
+    "local_full_test_shots": 200000,
+    "local_threads": 16,
+    "five_run_seconds": [
+      48.417789399994945,
+      49.532521299996006,
+      50.05560010000045,
+      50.62460219999775,
+      50.64430870000069
+    ],
+    "local_five_run_median_seconds": 50.05560010000045,
+    "timing_note": "Same released inference modules; timings exclude import and CSV I/O. Not a judge-machine score."
+  },
+  "submission": {
+    "file": "results.csv",
+    "rows": 200000,
+    "header": [
+      "id",
+      "L0",
+      "L1",
+      "L2",
+      "L3"
+    ],
+    "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+    "input_raw_sha256": "5c81111d9d1c800f459a34352b2aa498671de602486ce0e94204b1a4d6f3a480",
+    "text_hash_normalization": "UTF-8 text with universal LF newlines",
+    "results_sha256": "a3f84f2deb5a2bcf092dae330796cabd9dd82e1d97ba536d5ad0d3808b4a9f18",
+    "assets_sha256": "86334ef1a439b7690a5ab0d9c4663a778d6d6c8f19b09f75a0c1648af46ed10b",
+    "configuration_sha256": "3607d8de9e4033b6bdc9d4841386549cca5276121f093913eacfaad4b9d73a71",
+    "source_sha256": {
+      "__init__.py": "3899305fb32fe249c6b90467f04cf7486e3ea3aaf627f5604a5b96c8c52119dd",
+      "decoder.py": "81f5199ec736a338576be1fd7023eff8c040a745bb3dd0c4b56c1e14f12317d1",
+      "bp_osd.py": "dfc85cabd138ec823c4b36980a85e666527a895580dda0c6980916aeacf51fb5",
+      "closure.py": "f852917a27dcd0383f5596935de0eb82cc44ee3c5fb9ed92eaae7d98a2509708",
+      "candidates.py": "c251a9ee1d2ae56c8d9b5eba0d6cc1577c096e5e7d9e13a26e8caaa603538298",
+      "prepare.py": "074e029f8be5b2ead91434d1398088512b430f642db5f0ccd865f2200644be26"
+    },
+    "deterministic_runs": 2,
+    "local_seconds": [
+      48.39720959999249,
+      49.75268669999787
+    ],
+    "test_ler": null,
+    "note": "Unlabelled test predictions; no test LER measured."
+  }
+}

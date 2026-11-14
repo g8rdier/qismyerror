@@ -1,0 +1,748 @@
+{
+  "change": "Skip exactly-zero cv0 updates in the vectorized state loop using the existing hasv0 guard",
+  "reference_version": "original decoder, before the runtime work",
+  "selected_submission_confirmed_by_user": true,
+  "machine": {
+    "cpu": "AMD Ryzen 7 250 w/ Radeon 780M Graphics",
+    "cores": 8,
+    "hardware_threads": 16
+  },
+  "baseline_16_threads": {
+    "selected_submission": "submission_tweak_tieband01.csv",
+    "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+    "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+    "shots": 200000,
+    "bits": 800000,
+    "threads": 16,
+    "runs": [
+      {
+        "run": 1,
+        "seconds": {
+          "X": 42.79118295200169,
+          "Z": 45.773182276054285
+        },
+        "total_seconds": 88.56436522805598,
+        "changed_bits": 0
+      },
+      {
+        "run": 2,
+        "seconds": {
+          "X": 44.062942568038125,
+          "Z": 44.88055738602998
+        },
+        "total_seconds": 88.9434999540681,
+        "changed_bits": 0
+      },
+      {
+        "run": 3,
+        "seconds": {
+          "X": 44.25452345999656,
+          "Z": 46.50581826700363
+        },
+        "total_seconds": 90.7603417270002,
+        "changed_bits": 0
+      }
+    ],
+    "median_seconds": 88.9434999540681,
+    "import_seconds_excluded": 0.2713249200023711,
+    "byte_identical_csv": true,
+    "source_sha256": {
+      "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+      "mld.py": "bf412215da5cd05e449dbe5f3fb451c55ad7670e6abac691a9ccb71f6645cd99",
+      "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+      "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+      "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+    },
+    "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+    "packages": {
+      "numpy": "2.2.6",
+      "stim": "1.16.0",
+      "numba": "0.68.1",
+      "llvmlite": "0.50.0"
+    },
+    "official_hardware_timing": false
+  },
+  "optimized_16_threads": {
+    "selected_submission": "submission_tweak_tieband01.csv",
+    "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+    "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+    "shots": 200000,
+    "bits": 800000,
+    "threads": 16,
+    "runs": [
+      {
+        "run": 1,
+        "seconds": {
+          "X": 41.77570435300004,
+          "Z": 43.63185578701086
+        },
+        "total_seconds": 85.4075601400109,
+        "changed_bits": 0
+      },
+      {
+        "run": 2,
+        "seconds": {
+          "X": 42.49811218603281,
+          "Z": 43.60625914798584
+        },
+        "total_seconds": 86.10437133401865,
+        "changed_bits": 0
+      },
+      {
+        "run": 3,
+        "seconds": {
+          "X": 42.68271663598716,
+          "Z": 43.50601931096753
+        },
+        "total_seconds": 86.1887359469547,
+        "changed_bits": 0
+      }
+    ],
+    "median_seconds": 86.10437133401865,
+    "import_seconds_excluded": 0.27770267199957743,
+    "byte_identical_csv": true,
+    "source_sha256": {
+      "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+      "mld.py": "f40d05b85b9606c155ba6f492f6b11be47eb755a88073511a499ff622df27be1",
+      "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+      "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+      "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+    },
+    "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+    "packages": {
+      "numpy": "2.2.6",
+      "stim": "1.16.0",
+      "numba": "0.68.1",
+      "llvmlite": "0.50.0"
+    },
+    "official_hardware_timing": false
+  },
+  "baseline_recheck_after_optimization": {
+    "selected_submission": "submission_tweak_tieband01.csv",
+    "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+    "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+    "shots": 200000,
+    "bits": 800000,
+    "threads": 16,
+    "runs": [
+      {
+        "run": 1,
+        "seconds": {
+          "X": 43.83265533600934,
+          "Z": 45.79684331797762
+        },
+        "total_seconds": 89.62949865398696,
+        "changed_bits": 0
+      }
+    ],
+    "median_seconds": 89.62949865398696,
+    "import_seconds_excluded": 0.2793422029935755,
+    "byte_identical_csv": true,
+    "source_sha256": {
+      "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+      "mld.py": "bf412215da5cd05e449dbe5f3fb451c55ad7670e6abac691a9ccb71f6645cd99",
+      "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+      "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+      "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+    },
+    "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+    "packages": {
+      "numpy": "2.2.6",
+      "stim": "1.16.0",
+      "numba": "0.68.1",
+      "llvmlite": "0.50.0"
+    },
+    "official_hardware_timing": false
+  },
+  "optimized_48_threads": {
+    "selected_submission": "submission_tweak_tieband01.csv",
+    "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+    "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+    "shots": 200000,
+    "bits": 800000,
+    "threads": 48,
+    "runs": [
+      {
+        "run": 1,
+        "seconds": {
+          "X": 42.177182835992426,
+          "Z": 43.95540123502724
+        },
+        "total_seconds": 86.13258407101966,
+        "changed_bits": 0
+      }
+    ],
+    "median_seconds": 86.13258407101966,
+    "import_seconds_excluded": 0.27803780196700245,
+    "byte_identical_csv": true,
+    "source_sha256": {
+      "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+      "mld.py": "f40d05b85b9606c155ba6f492f6b11be47eb755a88073511a499ff622df27be1",
+      "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+      "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+      "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+    },
+    "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+    "packages": {
+      "numpy": "2.2.6",
+      "stim": "1.16.0",
+      "numba": "0.68.1",
+      "llvmlite": "0.50.0"
+    },
+    "official_hardware_timing": false
+  },
+  "local_runtime_reduction_percent": 3.1920585782160837,
+  "generated_numerical_equality": {
+    "shots_per_basis": 2048,
+    "seeds": {
+      "X": 202611228,
+      "Z": 202611230
+    },
+    "reference_threads": 16,
+    "candidate_threads": [
+      1,
+      16
+    ],
+    "exactly_equal_arrays": [
+      "X_events",
+      "X_stage0_sweep0",
+      "X_stage0_sweep1",
+      "X_stage1_sweep0",
+      "X_stage1_sweep1",
+      "X_stage2_sweep0",
+      "X_stage2_sweep1",
+      "X_marginals",
+      "X_predictions",
+      "X_duplicates",
+      "Z_events",
+      "Z_stage0_sweep0",
+      "Z_stage0_sweep1",
+      "Z_stage1_sweep0",
+      "Z_stage1_sweep1",
+      "Z_stage2_sweep0",
+      "Z_stage2_sweep1",
+      "Z_marginals",
+      "Z_predictions",
+      "Z_duplicates",
+      "bit_indices"
+    ],
+    "zero_guard_checked_for_all_circuit_mechanisms": true,
+    "reversed_partitioned_duplicate_and_empty_inputs_checked": true,
+    "bit_index_checks": 10065,
+    "tolerance": 0
+  },
+  "static_equivalence": {
+    "decoder_py_byte_identical": true,
+    "requirements_byte_identical": true,
+    "only_mld_function_changed": "_mld_shot",
+    "nonzero_guard_path_original_ast_identical": true,
+    "zero_path_removes_only_f0_load_and_ce_zero_updates": true,
+    "all_other_mld_module_asts_identical": true
+  },
+  "discarded_trials": [
+    {
+      "change": "Difficulty scheduling, native bit scans and smaller integer hash-table indices",
+      "median_seconds": 88.12225550599396,
+      "reason": "Difference within observed runtime variation; no reliable benefit"
+    }
+  ],
+  "official_hardware_timing_measured": false,
+  "state_sort_optimization": {
+    "reference_version": "with the zero-update skip",
+    "change": "Exact quicksort prefix with order-preserving integer keys and fused field gathers",
+    "optimized_16_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 16,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 38.98789155000122,
+            "Z": 39.43358965899097
+          },
+          "total_seconds": 78.42148120899219,
+          "changed_bits": 0
+        },
+        {
+          "run": 2,
+          "seconds": {
+            "X": 38.6882079920033,
+            "Z": 39.64909362903563
+          },
+          "total_seconds": 78.33730162103893,
+          "changed_bits": 0
+        },
+        {
+          "run": 3,
+          "seconds": {
+            "X": 38.75944850698579,
+            "Z": 39.372064783005044
+          },
+          "total_seconds": 78.13151328999083,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 78.33730162103893,
+      "import_seconds_excluded": 0.5289461130159907,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+        "mld.py": "c4efce66fb885db8b0b3f51fb5a966dc9def5745dd73a2dab9d6fa8a1dbebb3f",
+        "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "optimized_48_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 48,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 37.93829523102613,
+            "Z": 39.071956247033086
+          },
+          "total_seconds": 77.01025147805922,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 77.01025147805922,
+      "import_seconds_excluded": 0.5352087219944224,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+        "mld.py": "c4efce66fb885db8b0b3f51fb5a966dc9def5745dd73a2dab9d6fa8a1dbebb3f",
+        "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "additional_runtime_reduction_percent": 9.0205289146697,
+    "overall_runtime_reduction_percent": 11.924646925864602,
+    "sort_invariant_tests": {
+      "passed": 3,
+      "exhaustive_tied_prefix_cases": 83653,
+      "exhaustive_binary_partition_cases": 131072,
+      "large_random_special_and_raw_float_bit_cases": true,
+      "input_scores_bit_identical": true
+    },
+    "generated_numerical_equality": {
+      "shots_per_basis": 2048,
+      "candidate_threads": [
+        1,
+        16
+      ],
+      "all_21_arrays_exactly_equal_to_original": true,
+      "scope": "All stage log weights, marginals, predictions; repeated, reversed, partitioned, duplicate and empty batches"
+    },
+    "static_equivalence": {
+      "decoder_py_byte_identical": true,
+      "requirements_byte_identical": true,
+      "kernel_identical_after_restoring_only_sort_and_gather": true,
+      "all_other_existing_mld_module_nodes_identical": true
+    },
+    "provenance": "General-purpose Numba 0.68.1 quicksort adaptation; full BSD copyright and license notice embedded in mld.py; no external QEC implementation",
+    "discarded_compaction_trial": {
+      "median_seconds": 78.57415154902264,
+      "reason": "No reliable additional speedup"
+    },
+    "official_hardware_timing_measured": false
+  },
+  "handin_folder": {
+    "folder": "handin/",
+    "contents": [
+      "decoder.py",
+      "mld.py",
+      "requirements.txt",
+      "circuits/X_circuit.stim",
+      "circuits/Z_circuit.stim"
+    ],
+    "note": "decoder.py, mld.py and the circuits are byte-identical copies of submission_template/; requirements.txt holds only the three pins (comment lines removed).",
+    "full_check_48_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 48,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 42.09349311696133,
+            "Z": 43.743192013993394
+          },
+          "total_seconds": 85.83668513095472,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 85.83668513095472,
+      "import_seconds_excluded": 4.116958595986944,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+        "mld.py": "c4efce66fb885db8b0b3f51fb5a966dc9def5745dd73a2dab9d6fa8a1dbebb3f",
+        "requirements.txt": "28f7dc7ce08d40dd82a9eb8b46103b18d1fa6af14495274ba3756356be1c00e1",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "check_handin_fresh_venv": {
+      "python": "3.13.15",
+      "threads": 16,
+      "X_LER": 0.0343,
+      "Z_LER": 0.03277,
+      "decode_seconds": 82.5,
+      "passed": true
+    }
+  },
+  "discarded_trials_2026_11_14": {
+    "profile_16_threads": "per basis: stage 1 ~3.9 s, stage 2 ~8 s, stage 3 ~26 s, serial NumPy glue 0.18 s. In stage 3 (single-thread, 150 shots per basis and direction) the exact prefix quicksort is ~54% of kernel time and the hash-table rebuild after compaction ~22% (measured by running each twice).",
+    "hardest_first_scheduling": "stages 2-3 handed out by previous-stage peak state count (rank correlation 0.96 with time), equal-cost batches. Exact (0 changed bits at 48 threads, 21 parity arrays identical at 1 and 16 threads), but no gain above noise locally: full set 80.4/81.1 s vs 80.9/81.3 s reference (48 threads), one-third subset at 16 threads median 25.31 s vs 25.56 s. Not kept. Later included at the team's request (see hardest_first_scheduling_included).",
+    "radix_sort_with_tie_fallback": "stable radix sort used only when the kept prefix has no tied keys; ties occur in nearly every sort (~34 fallbacks per shot), so slower (19.5 s vs 17.6 s). Not kept.",
+    "allocation_free_sort": "same quicksort into kernel scratch buffers: 18.06 s vs 17.95 s. Not kept.",
+    "skip_unchanged_table_rebuild": "18.20 s vs 17.99 s. Not kept.",
+    "deduplicate_syndromes": "duplicates are 21% of stage-1 shots but 0.2-0.3% of stage 2 and ~0% of stage 3; stage 1 is ~10% of the runtime and the duplicates are its cheapest shots. Not implemented.",
+    "swap_arrays_after_sort": "on top of the in-place renumbering: stage-3 single-thread 15.17/15.51 s vs 15.33/15.40 s, outputs identical. Not kept."
+  },
+  "table_remap_optimization": {
+    "change": "After compaction, renumber the surviving states in the hash table in one sequential pass and mark removed states (-2) instead of clearing the table and inserting every state again; a full rebuild happens only when occupied slots including markers exceed half the table or the table exceeds 16x the state count. Lookups skip markers, inserts may reuse them. Keys and arithmetic are unchanged.",
+    "reference_version": "with the exact state sort",
+    "single_thread_kernel_seconds": {
+      "stage3_150_shots_per_basis_and_direction": {
+        "before": 18.0,
+        "after": 15.51
+      },
+      "stage2_1000": {
+        "before": 6.76,
+        "after": 6.03
+      },
+      "stage1_20000": {
+        "before": 10.66,
+        "after": 10.78
+      },
+      "outputs_and_stats_sha256_identical": true
+    },
+    "interleaved_16_thread_full_runs": {
+      "candidate_total_seconds": [
+        74.51834205602063,
+        75.14313231699634,
+        73.04784495697822
+      ],
+      "reference_total_seconds": [
+        77.01321255601943,
+        77.8333767070435,
+        77.32620336103719
+      ],
+      "candidate_median": 74.51834205602063,
+      "reference_median": 77.32620336103719,
+      "changed_bits": 0,
+      "byte_identical_csv": true,
+      "candidate_source_sha256": {
+        "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+        "mld.py": "58dc1afea9f3972a58e00999c2774e46c71cf3d6fbce95ba1a36f84a5a97cc6d",
+        "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      }
+    },
+    "full_check_48_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 48,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 39.42317249800544,
+            "Z": 40.73873048101086
+          },
+          "total_seconds": 80.1619029790163,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 80.1619029790163,
+      "import_seconds_excluded": 0.2718853650148958,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+        "mld.py": "58dc1afea9f3972a58e00999c2774e46c71cf3d6fbce95ba1a36f84a5a97cc6d",
+        "requirements.txt": "c8dd99bc00e75c5350c0734c45a7c415ef3bf9b5055b7b8dd30b03cd3544f4e7",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "handin_full_check_48_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 48,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 36.98640489502577,
+            "Z": 38.765457808971405
+          },
+          "total_seconds": 75.75186270399718,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 75.75186270399718,
+      "import_seconds_excluded": 4.570303165004589,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "c773f4f9d09214c0de4c322284b6265b8489ace133eafc650d4040bda8e6c977",
+        "mld.py": "58dc1afea9f3972a58e00999c2774e46c71cf3d6fbce95ba1a36f84a5a97cc6d",
+        "requirements.txt": "28f7dc7ce08d40dd82a9eb8b46103b18d1fa6af14495274ba3756356be1c00e1",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "generated_numerical_equality": "21 arrays of verify_runtime_parity.py (all stage log weights, marginals, predictions) byte-identical to the reference at 1 and 16 threads",
+    "check_handin_fresh_venv": {
+      "X_LER": 0.0343,
+      "Z_LER": 0.03277,
+      "decode_seconds_16_threads": 72.7,
+      "passed": true
+    },
+    "official_hardware_timing": false
+  },
+  "hardest_first_scheduling_included": {
+    "decision": "Included at the team's request on simulation evidence; exact, but not measurably faster on the 8-core laptop.",
+    "change": "Stages 2-3 hand out shots most expensive first (previous-stage peak state count, summed over both sweeps), in batches of about equal estimated cost; results are scattered back to the original shot order before any further arithmetic. decoder.py only passes the costs; the escalation mask is unchanged.",
+    "simulation_48_threads": "from measured per-shot times: stage 3 9.11 -> 8.34 s (optimal), stage 2 2.81 -> 2.72 s per basis; HT tail compression makes the real gain smaller.",
+    "local_ab": {
+      "full_16_threads_old_new": [
+        [
+          76.27,
+          75.89
+        ],
+        [
+          76.7,
+          75.61
+        ]
+      ],
+      "subset_33333_48_threads_old_new": [
+        [
+          25.16,
+          26.46,
+          26.31
+        ],
+        [
+          26.18,
+          26.12,
+          25.86
+        ]
+      ]
+    },
+    "full_check_handin_48_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 48,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 39.08914910303429,
+            "Z": 40.165897830040194
+          },
+          "total_seconds": 79.25504693307448,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 79.25504693307448,
+      "import_seconds_excluded": 0.28038633899996057,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "6e86a6ecf7b050bfcb0dd4450a5d8732d73f36ac2693959c8f1e9a9271deca1e",
+        "mld.py": "c158ccaed7f8b7691faebcea1655a18dede635ba553a07be6840efeb37899b06",
+        "requirements.txt": "28f7dc7ce08d40dd82a9eb8b46103b18d1fa6af14495274ba3756356be1c00e1",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "full_check_handin_16_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 16,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 38.496374548994936,
+            "Z": 41.34035453799879
+          },
+          "total_seconds": 79.83672908699373,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 79.83672908699373,
+      "import_seconds_excluded": 0.3060288460110314,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "6e86a6ecf7b050bfcb0dd4450a5d8732d73f36ac2693959c8f1e9a9271deca1e",
+        "mld.py": "c158ccaed7f8b7691faebcea1655a18dede635ba553a07be6840efeb37899b06",
+        "requirements.txt": "28f7dc7ce08d40dd82a9eb8b46103b18d1fa6af14495274ba3756356be1c00e1",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "generated_numerical_equality": "21 parity arrays byte-identical to the reference at 1 and 16 threads",
+    "check_handin_fresh_venv_48_threads": {
+      "X_LER": 0.0343,
+      "Z_LER": 0.03277,
+      "decode_seconds": 76.9,
+      "passed": true
+    }
+  },
+  "partition_scan_sentinels": {
+    "change": "In the exact prefix quicksort, the two partition scans drop their bounds tests (i < high, j >= low). After median-of-three, values[high] holds the pivot and values[low] <= pivot for the whole partition, so both scans stop at the same positions as before; swaps, pivots and the returned order are unchanged.",
+    "reference_version": "with hardest-first scheduling",
+    "single_thread_stage3_seconds": {
+      "before": [
+        15.338,
+        15.43
+      ],
+      "after": [
+        14.837,
+        14.754
+      ],
+      "outputs_identical": true
+    },
+    "interleaved_16_thread_full_runs": {
+      "new": [
+        64.23801510699559,
+        64.99806155101396
+      ],
+      "old": [
+        73.755349592946,
+        73.62993356399238
+      ],
+      "changed_bits": 0,
+      "byte_identical_csv": true
+    },
+    "handin_full_check_48_threads": {
+      "selected_submission": "submission_tweak_tieband01.csv",
+      "selected_submission_sha256": "878631d6b0a31f7c2ec06d55b58fb82b7f6b8aa26f27e7321f5ebb63b08a17a1",
+      "input_sha256": "04607a99023315216e86c790bc11bf72150c1885a4ae18b7729d0be105d2dab5",
+      "shots": 200000,
+      "bits": 800000,
+      "threads": 48,
+      "runs": [
+        {
+          "run": 1,
+          "seconds": {
+            "X": 33.63454099599039,
+            "Z": 34.817041802976746
+          },
+          "total_seconds": 68.45158279896714,
+          "changed_bits": 0
+        }
+      ],
+      "median_seconds": 68.45158279896714,
+      "import_seconds_excluded": 0.26527458999771625,
+      "byte_identical_csv": true,
+      "source_sha256": {
+        "decoder.py": "6e86a6ecf7b050bfcb0dd4450a5d8732d73f36ac2693959c8f1e9a9271deca1e",
+        "mld.py": "9b158cc92ecbfefee09918e995b1c378d0c20421b177a1b9af1a42d788e8561f",
+        "requirements.txt": "28f7dc7ce08d40dd82a9eb8b46103b18d1fa6af14495274ba3756356be1c00e1",
+        "circuits/X_circuit.stim": "dc6d415ae3f0b5396a7f63ba1047f024be8ce7e44b03ace65348bcee78b3c070",
+        "circuits/Z_circuit.stim": "36a24a0347bbb82362af28d816d790d5ee1cb1543fef2e9af7ada70536bf9968"
+      },
+      "python": "3.13.15 (main, Sep  1 2026, 14:18:08) [Clang 22.1.3 ]",
+      "packages": {
+        "numpy": "2.2.6",
+        "stim": "1.16.0",
+        "numba": "0.68.1",
+        "llvmlite": "0.50.0"
+      },
+      "official_hardware_timing": false
+    },
+    "generated_numerical_equality": "21 parity arrays byte-identical to the reference at 1 and 16 threads; sort invariant tests pass",
+    "check_handin_fresh_venv_48_threads": {
+      "X_LER": 0.0343,
+      "Z_LER": 0.03277,
+      "decode_seconds": 67.8,
+      "passed": true
+    },
+    "discarded_with_it": "same sentinel idea for the insertion-sort step (low > 0): no gain; int32 sort indices: no gain.",
+    "official_hardware_timing": false
+  }
+}

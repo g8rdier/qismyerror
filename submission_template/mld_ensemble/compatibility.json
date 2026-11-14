@@ -1,0 +1,41 @@
+{
+  "note": "Frozen ensemble export versus cached audit outputs; no truth labels read.",
+  "records": [
+    {
+      "basis": "X",
+      "family": 0,
+      "shots": 1000,
+      "changed_bits": 0
+    },
+    {
+      "basis": "Z",
+      "family": 0,
+      "shots": 1000,
+      "changed_bits": 0
+    },
+    {
+      "basis": "X",
+      "family": 1,
+      "shots": 1000,
+      "changed_bits": 0
+    },
+    {
+      "basis": "Z",
+      "family": 1,
+      "shots": 1000,
+      "changed_bits": 0
+    },
+    {
+      "basis": "X",
+      "family": 2,
+      "shots": 1000,
+      "changed_bits": 0
+    },
+    {
+      "basis": "Z",
+      "family": 2,
+      "shots": 1000,
+      "changed_bits": 0
+    }
+  ]
+}

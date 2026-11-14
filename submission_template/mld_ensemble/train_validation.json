@@ -1,0 +1,41 @@
+{
+  "data_sha256": "ad3a87fd4eba2c96f95d230ad8701905813179c4023ed641a5ced5ca8fa5e522",
+  "data_sha256_raw": "8f17ab7f4867b7f5fa46094995b0a898f53796cde9f590617a48bce3b4abded4",
+  "data_checksum_mode": "UTF-8 normalized to LF",
+  "shots": 200000,
+  "bits": 800000,
+  "ler": 0.03386,
+  "ci95": [
+    0.03327560702155231,
+    0.034444392978447695
+  ],
+  "basis": {
+    "X": {
+      "shots": 100000,
+      "wrong": 13714,
+      "sum_loss": 3428.5,
+      "sum_squared_loss": 1898.875,
+      "seconds": 99.51488550000067
+    },
+    "Z": {
+      "shots": 100000,
+      "wrong": 13374,
+      "sum_loss": 3343.5,
+      "sum_squared_loss": 1886.375,
+      "seconds": 98.26669640000182
+    }
+  },
+  "note": "Shot-level interval; frozen physics decoder, no fitted weights.",
+  "generation": {
+    "out": "data/train/",
+    "shots": 100000,
+    "seed": 42,
+    "rounds": 5,
+    "noise_probability": 0.002,
+    "basis": [
+      "X",
+      "Z"
+    ],
+    "exclude_observable_flips": false
+  }
+}

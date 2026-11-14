@@ -1,0 +1,13 @@
+{
+  "byte_identical_asset_rebuild": true,
+  "standalone_renamed_folder": true,
+  "blocked_project_imports": [
+    "hackathon_2026",
+    "mld",
+    "bp_osd",
+    "mld_improvements",
+    "closure_decoder"
+  ],
+  "model_does_not_require_predictions_or_validation_csvs": true,
+  "repeatable_shots_per_basis": 128
+}

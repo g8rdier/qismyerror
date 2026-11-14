@@ -1,0 +1,21 @@
+{
+  "sha256": {
+    ".gitattributes": "844cdeeb134af530636dbfb7c62afb8496fcb8a9780ed10a34c89b041cdf809c",
+    "__init__.py": "194c699da55dd5a0221dd7f9c1f1859ed1cf6c707c3a4f9e7f856cdc1771448a",
+    "assets.npz": "7d06df05521eb5abc70ddda9f0786491cdc904bee87f61f9d678241ba2b55c03",
+    "compatibility.json": "ed436835c52c3d0464bd2e60fefab462ee572d4f2c0f434db04ed81882835dfb",
+    "decoder.py": "be186f790cdfa0a04ea17357a3680955ab39ac028fdb07e048d7c00c4145840b",
+    "entrypoint.py": "d4184f24c4bfbcf14614626d57036c6b7d880434e7f6e33e17cd5a8d1538ee48",
+    "kernel.py": "f92f26404f00665e27b975ebd434d2577159d0bb9d4edb9e56bb60096741e39e",
+    "LICENSE": "84d8b4c98051d9c9e586fa66d1b1c465f26e56f49155d89073eac30f77684608",
+    "model.json": "a4002e0e2adbea7f95953bc6d961b0e380e66049df9e0fc6e29588d529b92780",
+    "prepare.py": "d8c62f5787dd949ed4154c5744716aca7b33d88d0fc14b42c86b11e27a640e5b",
+    "README.md": "0553e7646eab4994dfcb4b1373fdf054bb64e96c0e3947f310dfed3e686b68ad",
+    "requirements.txt": "28f7dc7ce08d40dd82a9eb8b46103b18d1fa6af14495274ba3756356be1c00e1",
+    "results.csv": "bd986f930f2dd610911161c66a2564d6f2e32943bf3696eabd2bd78d77fd5bc3",
+    "standalone.json": "2500e610f17bfc8d7a286b4fcd933010e9a08bbb850af5234cfdf8e5d17f8e2d",
+    "test_decoder.py": "ce16616c4595fcaf8d3db11e44ef408baa1904b5c1f1e538aa019583e8fc1c7d",
+    "train_validation.json": "d771490a0bef54fd9a96e9eaa1a174b8e32806818850d259ea0f4ed596f8bf57",
+    "validation.json": "14f6e26dab94d02d96164d18567b21ec9d9679e4a40d5b34bf696c0e6edd0fc2"
+  }
+}
